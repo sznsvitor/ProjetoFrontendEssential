@@ -1,6 +1,8 @@
-:root {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-size: 62.5%;  /* 1rem = 10px, 10rem = 100px */
+body {
+    font-family: Arial, sans-serif;
+}
+
+#resultado {
+    font-size: 20px;
+    font-weight: bold;
 }

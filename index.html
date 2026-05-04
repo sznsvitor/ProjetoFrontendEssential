@@ -1,11 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Clima Tempo</title>
+
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/global.css">
 </head>
+
 <body>
-    
+
+<header class="bg-primary text-white text-center p-4">
+    <h1>Clima Tempo</h1>
+    <p>Consulte o clima da sua cidade</p>
+</header>
+
+<nav class="navbar navbar-light bg-light justify-content-center">
+    <a href="index.html" class="btn btn-outline-primary me-2">Home</a>
+    <a href="pages/about.html" class="btn btn-outline-secondary me-2">Sobre</a>
+    <a href="pages/contact.html" class="btn btn-outline-success">Contato</a>
+</nav>
+
+<main class="container text-center mt-5">
+
+    <h2>Buscar clima</h2>
+
+    <input type="text" id="cidade" class="form-control mb-3" placeholder="Digite a cidade">
+
+    <button class="btn btn-primary" onclick="buscarClima()">
+    </button>
+
+    <div id="resultado" class="mt-4"></div>
+
+</main>
+
+<footer class="bg-dark text-white text-center p-3 mt-5">
+    <p>© 2026 - Clima Tempo</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
