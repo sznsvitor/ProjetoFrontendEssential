@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Sobre</title>
+    <title>Fale Conosco</title>
 
     <link rel="stylesheet" href="../bootstrap-5.3.8-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/global.css">
@@ -11,7 +11,7 @@
 <body>
 
 <header class="bg-primary text-white text-center p-4">
-    <h1>Sobre o Projeto</h1>
+    <h1>Fale Conosco</h1>
 </header>
 
 <nav class="text-center mt-3">
@@ -19,15 +19,18 @@
 </nav>
 
 <main class="container mt-4">
-    <h2>Quem somos</h2>
-    <p>Somos estudantes criando um site de clima simples e funcional.</p>
 
-    <h3>O que fazemos</h3>
-    <p>O Clima Tempo é uma plataforma web que fornece dados
-meteorológicos em tempo real utilizando integração com API.
-Nosso objetivo é ajudar você a planejar o dia com segurança.</p>
+    <form onsubmit="enviarFormulario(event)">
+        <input type="text" class="form-control mb-3" placeholder="Nome" required>
+        <input type="email" class="form-control mb-3" placeholder="Email" required>
+        <textarea class="form-control mb-3" placeholder="Mensagem"></textarea>
+
+        <button class="btn btn-success">Enviar</button>
+    </form>
+
 </main>
 
+<script src="../js/script.js"></script>
 <script src="../bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
