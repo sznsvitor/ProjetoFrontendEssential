@@ -1,20 +1,43 @@
 
 /* NAVBAR */
 .navbar{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+
     background:transparent !important;
 }
 
 /* HERO */
 .hero{
+    position:relative;
     height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
+    background-image: url("../img/ChuvaFimDeTarde.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5); /* escurece imagem */
 }
 
 .home-box{
+    position:relative;
+    z-index:2;
     animation: slideUp 1.2s ease;
 }
 
@@ -44,7 +67,10 @@
 
 /* CTA */
 .cta{
-    background:#0b3d91;
+    background-image: url("../img/ChuvaFimDeTarde.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius:20px;
 }
 
