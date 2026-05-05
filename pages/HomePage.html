@@ -3,50 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Clima Tempo</title>
+
 <link rel="stylesheet" href="../bootstrap-5.3.8-dist/css/bootstrap.min.css">
-
-<style>
-    body{
-        margin:0;
-        height:100vh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        background:linear-gradient(135deg,#0a1f44,#0d6efd);
-        color:white;
-        text-align:center;
-    }
-
-.home-box{
-    animation: fade 1s ease;
-}
-
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-</style>
+<link rel="stylesheet" href="../css/HomePage.css">
 
 </head>
-    <body>
 
-        <div class="home-box">
-            <h1 class="display-3">Clima Tempo</h1>
-                <p class="lead">Consulte a previsão do tempo em segundos</p>
-                    <button class="btn btn-light btn-lg mt-3"
-                        onclick="entrarSite()">
-                        Ver previsão do tempo
-                    </button>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container d-flex justify-content-between align-items-center">
+
+        <a class="navbar-brand text-white fw-bold">
+            <img src="../img/ClimaTempo.png" alt="Clima Tempo" height="40">
+            Clima Tempo
+        </a>
+
+        <div class="d-flex justify-content-center">
+            <a href="about.html" class="btn btn-outline-light me-2">Sobre</a>
+            <a href="#funcionalidades" class="btn btn-outline-light me-2">Funcionalidades</a>
+            <a href="FaleConosco.html" class="btn btn-outline-light">Fale Conosco</a>
         </div>
 
-        <script> function entrarSite(){ window.location.href = "../index.html";} </script>
-        
-    </body>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+<div class="home-box">
+
+<h1 class="display-3 fw-bold">
+    <img src="../img/ClimaTempo.png" alt="Clima Tempo" class="img-fluid" style="max-width:100px;">
+    Clima Tempo
+</h1>
+
+<p class="lead">
+Consulte o clima da sua cidade em segundos.
+</p>
+
+<a href="MainPage.html" class="btn btn-light btn-lg mt-4">
+Ver previsão do tempo ☁️
+</a>
+
+</div>
+
+</section>
+
+<!-- FUNCIONALIDADES -->
+<section id="funcionalidades" class="section bg-dark">
+
+<div class="container text-center">
+
+<h2 class="mb-5">Funcionalidades</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+<div class="card card-custom p-4">
+<h4>🌎 Consulta Global</h4>
+<p>Pesquise o clima de qualquer cidade do mundo.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card card-custom p-4">
+<h4>⚡ Tempo Real</h4>
+<p>Dados atualizados diretamente da API climática.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card card-custom p-4">
+<h4>📱 Responsivo</h4>
+<p>Experiência perfeita em celular, tablet e desktop.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA FINAL -->
+<section class="section container text-center">
+
+<div class="cta p-5">
+
+<h2>Pronto para começar?</h2>
+
+<p>
+Clique abaixo e veja a previsão do tempo agora mesmo.
+</p>
+
+<a href="MainPage.html" class="btn btn-light btn-lg">
+Entrar no sistema
+</a>
+
+</div>
+
+</section>
+
+<footer class="text-center p-4">
+<p>© 2026 • Clima Tempo</p>
+</footer>
+
+</body>
 </html>
