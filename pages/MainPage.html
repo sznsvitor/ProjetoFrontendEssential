@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clima Tempo</title>
+
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/global.css" />
+  </head>
+
+  <body>
+    <header class="bg-primary text-white text-center p-4 position-relative">
+      <div class="container">
+        <h1 class="display-4">Clima Tempo</h1>
+        <p class="lead">Consulte o clima da sua cidade</p>
+
+        <img
+          id="menu-icon"
+          class="icon-menu img-fluid"
+          src="../svg/menu.svg"
+          alt="ícone de menu"
+          style="width: 2rem; cursor: pointer"
+        />
+        <nav id="menu-option" class="collapse shadow-lg bg-white rounded mt-2">
+          <div class="d-flex flex-column">
+            <a
+              href="HomePage.html"
+              class="nav-link text-dark p-3 border-bottom custom-hover"
+              >Página Inicial</a
+            >
+            <a
+              href="about.html"
+              class="nav-link text-dark p-3 border-bottom custom-hover"
+              >Sobre nos</a
+            >
+            <a href="contact.html" class="nav-link text-dark p-3 custom-hover"
+              >Contatos</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container text-center mt-5">
+      <h2>Buscar clima</h2>
+      <div class="input-group mb-3 mx-auto" style="max-width: 500px">
+        <input
+          type="text"
+          id="cidade"
+          class="form-control"
+          placeholder="Digite a cidade"
+        />
+
+        <button class="btn btn-primary" onclick="buscarClima()">buscar</button>
+      </div>
+
+      <div id="resultado" class="mt-4"></div>
+    </main>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+      <p>© 2026 - Clima Tempo</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/funcionalidade.js"></script>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
