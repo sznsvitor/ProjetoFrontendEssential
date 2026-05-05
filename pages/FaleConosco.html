@@ -1,37 +1,244 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Fale Conosco</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato — ClimaHoje</title>
 
-    <link rel="stylesheet" href="../bootstrap-5.3.8-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/global.css">
+  <!-- Bootstrap (local) -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Estilos da página de contato (arquivo externo) -->
+  <link rel="stylesheet" href="../css/contact.css" />
 </head>
-
 <body>
 
-<header class="bg-primary text-white text-center p-4">
-    <h1>Fale Conosco</h1>
-</header>
+  <!-- Camada decorativa de nuvens animadas -->
+  <div class="cloud-layer" aria-hidden="true">
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+  </div>
 
-<nav class="text-center mt-3">
-    <a href="HomePage.html" class="btn btn-primary">Home</a>
-</nav>
+  <!-- ==============================
+       NAVEGAÇÃO PRINCIPAL
+       ============================== -->
+  <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Menu principal">
+    <div class="container">
 
-<main class="container mt-4">
+      <a class="navbar-brand" href="../index.html">
+        <span class="brand-icon" aria-hidden="true">🌤</span> Weatherly
+      </a>
 
-    <form onsubmit="enviarFormulario(event)">
-        <input type="text" class="form-control mb-3" placeholder="Nome" required>
-        <input type="email" class="form-control mb-3" placeholder="Email" required>
-        <textarea class="form-control mb-3" placeholder="Mensagem"></textarea>
+      <!-- Botão hambúrguer para mobile -->
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMain"
+              aria-controls="navMain" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <button class="btn btn-success">Enviar</button>
-    </form>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto me-4 gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/HomePage.html">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/about.html">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../pages/contact.html">Contato</a>
+          </li>
+        </ul>
+      </div>
 
-</main>
+    </div>
+  </nav>
 
-<script src="../js/script.js"></script>
-<script src="../bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ==============================
+       CONTEÚDO PRINCIPAL
+       ============================== -->
+  <main>
+
+    <!-- Cabeçalho / Hero da página -->
+    <section class="contact-hero" aria-labelledby="hero-title">
+      <div class="container">
+        <span class="eyebrow">📡 Fale Conosco</span>
+        <h1 id="hero-title">Tem alguma dúvida<br>sobre o clima?</h1>
+        <p>Nossa equipe está pronta para ajudar com previsões, relatórios e sugestões.</p>
+      </div>
+    </section>
+
+    <!-- Grade: Formulário + Cards de informação -->
+    <section class="pb-5" aria-label="Formulário de contato e informações">
+      <div class="container">
+        <div class="row g-4 justify-content-center">
+
+          <!-- Coluna do formulário -->
+          <div class="col-lg-7 fade-up">
+            <div class="glass-card">
+
+              <p class="section-title">
+                <span class="dot" aria-hidden="true"></span>
+                Enviar Mensagem
+              </p>
+
+              <!-- Formulário principal -->
+              <form id="contactForm" novalidate aria-label="Formulário de contato">
+
+                <!-- Nome e E-mail lado a lado no desktop -->
+                <div class="row g-3 mb-3">
+                  <div class="col-sm-6">
+                    <label class="form-label" for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome"
+                           class="form-control" placeholder="Seu nome"
+                           autocomplete="name" required />
+                    <div class="invalid-feedback">Por favor, informe seu nome.</div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="form-label" for="email">E-mail</label>
+                    <input type="email" id="email" name="email"
+                           class="form-control" placeholder="seu@email.com"
+                           autocomplete="email" required />
+                    <div class="invalid-feedback">Informe um e-mail válido.</div>
+                  </div>
+                </div>
+
+                <!-- Seleção de assunto -->
+                <div class="mb-3">
+                  <label class="form-label" for="assunto">Assunto</label>
+                  <select id="assunto" name="assunto" class="form-select" required>
+                    <option value="" disabled selected>Selecione um assunto…</option>
+                    <option value="previsao">🌦 Previsão do tempo</option>
+                    <option value="relatorio">📊 Relatórios climáticos</option>
+                    <option value="alerta">⚠️ Alertas e eventos extremos</option>
+                    <option value="sugestao">💡 Sugestões de melhoria</option>
+                    <option value="outro">✉️ Outro</option>
+                  </select>
+                  <div class="invalid-feedback">Selecione um assunto.</div>
+                </div>
+
+                <!-- Cidade de referência (opcional) -->
+                <div class="mb-3">
+                  <label class="form-label" for="cidade">Cidade de referência</label>
+                  <input type="text" id="cidade" name="cidade"
+                         class="form-control" placeholder="Ex: Rio de Janeiro, RJ"
+                         autocomplete="address-level2" />
+                </div>
+
+                <!-- Mensagem -->
+                <div class="mb-4">
+                  <label class="form-label" for="mensagem">Mensagem</label>
+                  <textarea id="mensagem" name="mensagem"
+                            class="form-control"
+                            placeholder="Descreva sua dúvida ou sugestão…"
+                            required></textarea>
+                  <div class="invalid-feedback">Por favor, escreva sua mensagem.</div>
+                </div>
+
+
+                <!-- Botão de envio -->
+                <button type="submit" class="btn-send" id="btnSend">
+                  ✈️ &nbsp;Enviar Mensagem
+                </button>
+
+              </form>
+            </div>
+          </div>
+
+          <!-- Coluna de informações de contato -->
+          <div class="col-lg-4 fade-up">
+
+            <!-- Cards: telefone, e-mail, endereço -->
+            <aside class="glass-card mb-4" aria-label="Informações de contato">
+              <p class="section-title">
+                <span class="dot" aria-hidden="true"></span>Informações
+              </p>
+
+              <div class="info-block">
+                <div class="info-icon" aria-hidden="true">📧</div>
+                <div>
+                  <h6>E-mail</h6>
+                  <p>contato@weatherly.com.br</p>
+                </div>
+              </div>
+
+              <div class="info-block">
+                <div class="info-icon" aria-hidden="true">📞</div>
+                <div>
+                  <h6>Telefone</h6>
+                  <p>(24) 3000-0000<br>Seg–Sex, 8h às 18h</p>
+                </div>
+              </div>
+
+              <div class="info-block">
+                <div class="info-icon" aria-hidden="true">📍</div>
+                <div>
+                  <h6>Endereço</h6>
+                  <p>Av. das Nuvens, 42<br>Petrópolis – RJ</p>
+                </div>
+              </div>
+            </aside>
+
+            <!-- Estimativa de tempo de resposta -->
+            <aside class="glass-card" aria-label="Tempo de resposta estimado">
+              <p class="section-title">
+                <span class="dot" aria-hidden="true"></span>Tempo de Resposta
+              </p>
+              <div class="d-flex flex-column gap-2">
+                <div class="response-row">
+                  <span>Dúvidas gerais</span>
+                  <span class="response-time">≤ 24h</span>
+                </div>
+                <hr class="divider-soft" />
+                <div class="response-row">
+                  <span>Alertas climáticos</span>
+                  <span class="response-time response-fast">≤ 2h</span>
+                </div>
+                <hr class="divider-soft" />
+                <div class="response-row">
+                  <span>Relatórios técnicos</span>
+                  <span class="response-time">≤ 48h</span>
+                </div>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================
+       RODAPÉ
+       ============================== -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Weatherly — Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Toast de confirmação de envio -->
+  <div id="successToast" class="toast align-items-center"
+       role="alert" aria-live="assertive" aria-atomic="true"
+       data-bs-delay="4000" style="display:none">
+    <div class="d-flex">
+      <div class="toast-body">✅ &nbsp;Mensagem enviada! Responderemos em breve.</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast" aria-label="Fechar"></button>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (local) -->
+  <script src="../js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript da página (arquivo externo) -->
+  <script src="../js/contact.js"></script>
 
 </body>
 </html>
