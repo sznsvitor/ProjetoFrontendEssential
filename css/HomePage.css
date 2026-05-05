@@ -67,12 +67,28 @@
 
 /* CTA */
 .cta{
+    position:relative;
+    overflow:hidden;
+
     background-image: url("../img/ChuvaFimDeTarde.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
     border-radius:20px;
 }
+.cta::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+    z-index:1;
+}
+.cta *{
+    position:relative;
+    z-index:2;
+}
+
 
 /* BOTÃO */
 .btn-light{
