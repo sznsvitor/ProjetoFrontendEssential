@@ -1,0 +1,17 @@
+#menu-option {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    min-width: 20rem;
+}
+
+.custom-hover:hover {
+    background-color: #f8f9fa;
+    color: #0d6efd !important;
+    transition: 0.3s; 
+}
+
+.collapse {
+    transition: height 0.35s ease;
+}
