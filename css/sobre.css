@@ -1,0 +1,138 @@
+/*---Cores---*/
+
+:root{
+    --fundo-geral:rgba(0,0,0,0.5);
+    --links-perfis:#ffffff;
+    --hover-links-perfis:linear-gradient(45deg, #1bbdee, #0c6bf0);
+    --fundo-footer:linear-gradient(#000000,#0b336b);
+    --fundo-cards: #fff;
+    --fundo-cards-estilizados: linear-gradient(135deg, rgba(16, 63, 134, 0.9), rgba(0, 0, 0, 0.9));
+    --texto-cards:#fff;
+}
+
+/*---Reset CSS---*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*---Navbar e configuração geral---*/
+
+.navbar{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+
+    background:transparent !important;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+    background-image: url(../img/ChuvaFimDeTarde.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--fundo-geral);
+    background-blend-mode: darken;
+}
+
+main{
+    flex:1;
+    margin-top: 2rem;
+}
+
+.titulo{
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+    
+
+/*---Cards dos alunos---*/
+
+section{
+    margin-top: 5rem;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    min-width: 16em;
+    height: 38em;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    padding: 1rem;
+    overflow: hidden;
+    color:var(--texto-cards);
+    background: var(--fundo-cards);
+    background: var(--fundo-cards-estilizados);
+}
+
+.card:hover{
+    transform: translatey(-5px);
+    box-shadow: 0 5px 20px rgb(255, 255, 255);
+}
+
+.card-img{
+    margin-top: 1rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-titulo{
+    margin-top: 1rem;
+    text-shadow: 2px 2px 5px rgba(255, 246, 246, 0.5);
+}
+
+.card-texto{
+    text-align: justify;
+    flex-grow: 1;
+    overflow-wrap: break-word;
+    /*word-break: break-all;*/
+}
+
+/*--- Icones dos links de cada aluno---*/
+
+.link-perfil{  
+    margin-top: auto;
+    font-size: 3em;
+    transition: 0.3s;
+    color: var(--links-perfis);
+}
+
+.link-perfil:hover{
+    font-size: 3.5em;
+    background: var(--hover-links-perfis);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*---Footer Simples---*/
+
+footer {
+    background: var(--fundo-footer);
+    color:#ffffff;
+    text-align: center;
+    padding: 1rem;
+}
