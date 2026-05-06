@@ -70,3 +70,28 @@ main.container{
     padding:40px;
 }
 /*_________________________*/
+
+.menu-icon-hover {
+    transition: transform 0.25s ease ;
+    opacity: 0.25s ease;
+}
+
+.menu-icon-hover:hover {
+    transform: scale(1.2) rotate(90deg);
+    opacity: 0.8;
+}
+
+#menu-icon{
+    transition: transform 0.25s ease;
+}
+
+#menu-icon.menu-aberto {
+    transform: rotate(90deg);
+}
+
+#meu-option.position-absolute {
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 16rem;
+}

@@ -11,25 +11,26 @@
     <link rel="stylesheet" href="../css/global.css" />
   </head>
   <body>
-    <header
-      class="text-white text-center p-5 position-relative header-gradient"
-    >
-      <div class="container">
-        <h1 class="display-3 fw-bold">Weatherly</h1>
-        <img
-          id="menu-icon"
-          class="img-fluid"
-          src="../svg/menu.svg"
-          alt="menu"
-          style="width: 2.5rem; cursor: pointer"
-        />
-        <nav id="menu-option" class="collapse shadow-lg rounded mt-2 menu-box">
-          <div class="d-flex flex-column">
-            <a href="HomePage.html" class="nav-link p-3 border-bottom">Home</a>
-            <a href="about.html" class="nav-link p-3 border-bottom">About</a>
-            <a href="FaleConosco.html" class="nav-link p-3">Contact</a>
-          </div>
-        </nav>
+    <header class="text-white p-5 header-gradient">
+      <div class="container d-flex align-items-center gap-3 position-relative">
+
+        <div class="position-relative">
+          <img
+            id="menu-icon"
+            class="img-fluid menu-icon-hover"
+            src="../svg/menu.svg"
+            alt="menu"
+            style="width: 2.5rem; cursor: pointer"
+          />
+          <nav id="menu-option" class="collapse shadow-lg rounded mt-2 menu-box position-absolute ">
+            <div class="d-flex flex-column">
+              <a href="HomePage.html" class="nav-link p-3 border-bottom">Home</a>
+              <a href="about.html" class="nav-link p-3 border-bottom">About</a>
+              <a href="FaleConosco.html" class="nav-link p-3">Contact</a>
+            </div>
+          </nav>
+        </div>
+        <h1 class="display-3 fw-bold mb-0 flex-grow-1 text-center">Weatherly</h1>
       </div>
     </header>
 
