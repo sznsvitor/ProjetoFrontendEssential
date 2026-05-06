@@ -1,15 +1,35 @@
-function mudarFundo(tipo) {
-    let imagem = "";
+function mudarFundo(clima) {
 
-    if (tipo === "sol") {
-        imagem = "/img/sol.gif";
-    } else if (tipo === "chuva") {
-        imagem = "/img/chuva.gif";
-    } else if (tipo === "nublado") {
-        imagem = "/img/nublado.gif";
-    } else {
-        imagem = "/img/tempestade.gif";
+    const body = document.body;
+
+    if (clima.includes("clear")) {
+
+        body.style.backgroundImage = "url('../img/sol.gif')";
+
+    }
+    else if (clima.includes("rain")) {
+
+        body.style.backgroundImage = "url('../img/chuva.gif')";
+
+    }
+    else if (clima.includes("cloud")) {
+
+        body.style.backgroundImage = "url('../img/nublado.gif')";
+
+    }
+    else if (clima.includes("storm") || clima.includes("thunder")) {
+
+        body.style.backgroundImage = "url('../img/tempestade.gif')";
+
+    }
+    else {
+
+        body.style.backgroundColor = "#0a1f44";
+
     }
 
-    document.body.style.backgroundImage = `url(${imagem})`;
+    body.style.backgroundSize = "cover";
+    body.style.backgroundPosition = "center";
+    body.style.backgroundRepeat = "no-repeat";
+    body.style.backgroundAttachment = "fixed";
 }

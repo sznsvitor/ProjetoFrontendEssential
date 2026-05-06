@@ -8,10 +8,15 @@
 /*Animação fade page*/
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg,#0a1f44,#00142e);
+    background-color: #0a1f44;
     color:white;
     opacity:0;
     animation: fadePage 1.2s ease forwards;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 @keyframes fadePage{
